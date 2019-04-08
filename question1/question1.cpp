@@ -17,7 +17,7 @@
 void *pp1(void *ptr)
 {
 	sem_wait(a);	
-   // fork();
+    fork();
     printf("I am the process P1\n");
     sleep(1);
     sem_post(b);
@@ -32,7 +32,7 @@ void *pp2(void *ptr)
 	sem_wait(b);	
 	sem_wait(e);
 	
-  //  fork();
+    fork();
     printf("I am the process P2\n");
     sleep(1);
     sem_post(e);
@@ -46,7 +46,7 @@ void *pp3(void *ptr)
 {
 	sem_wait(d);
 	sem_wait(e);	
-   // fork();
+    fork();
     printf("I am the process P3\n");
     sem_post(e);
     sem_post(f);
@@ -59,7 +59,7 @@ void *pp4(void *ptr)
 {
 	sem_wait(f);
 	sem_wait(c);	
-  //  fork();
+    fork();
     printf("I am the process P4\n");
     //sem_post(a);
     
